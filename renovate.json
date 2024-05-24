@@ -1,12 +1,8 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "enabledManagers": ["npm"],
+  "extends": ["config:base"],
   "regexManagers": [
     {
-      "fileMatch": ["_package.json$"],
+      "fileMatch": ["^_package.json$"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "\"dependencies\":\\s*\\{[^}]*}",
