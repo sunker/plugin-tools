@@ -6,7 +6,7 @@
   "enabledManagers": ["npm"],
   "regexManagers": [
     {
-      "fileMatch": ["^_package.json$"],
+      "fileMatch": ["_package.json$"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "\"dependencies\":\\s*\\{[^}]*}",
