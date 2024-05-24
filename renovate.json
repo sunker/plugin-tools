@@ -4,9 +4,17 @@
     "config:recommended"
   ],
   "enabledManagers": ["npm"],
-  "npm": {
-    "fileMatch": ["_package.json"]
-  },
+  "regexManagers": [
+    {
+      "fileMatch": ["^_package.json$"],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "\"dependencies\":\\s*\\{[^}]*}",
+        "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+      ],
+      "datasourceTemplate": "npm"
+    }
+  ],
   "packageRules": [{
 		"packagePatterns": ["*"],
 		"enabled": false
