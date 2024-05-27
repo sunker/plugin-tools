@@ -8,7 +8,7 @@
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "\"devDependencies\":\\s*\\{[^}]*}",
-        "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(?grafana.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "npm"
     }
