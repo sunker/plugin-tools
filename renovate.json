@@ -3,22 +3,12 @@
   "extends": ["config:base"],
   "includePaths": ["packages/create-plugin/templates/common/_package.json"],
   "prHourlyLimit": 100,
-  "packageRules": [
-    {
-      "packagePatterns": ["*"],
-      "enabled": false
-    },
-    {
-      "packagePatterns": ["@grafana/plugin-e2e"],
-      "enabled": true
-    }
-  ],
   "regexManagers": [
     {
       "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
-        "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"@grafana/plugin-e2e\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "@grafana/plugin-e2e",
       "depTypeTemplate": "devDependencies",
