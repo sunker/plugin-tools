@@ -11,6 +11,8 @@
         "\"devDependencies\":\\s*\\{[^}]*}",
         "\"@grafana/plugin-e2e\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
+      "depNameTemplate": "@grafana/plugin-e2e",
+      "depTypeTemplate": "devDependencies",
       "datasourceTemplate": "npm"
     }
   ]
