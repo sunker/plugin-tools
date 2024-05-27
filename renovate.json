@@ -7,8 +7,8 @@
       "fileMatch": ["^_package.json$"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
-        "\"devDependencies\":\\s*\\{[^}]*}",
-        "\"(?grafana.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"dependencies\":\\s*\\{[^}]*}",
+        "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "npm"
     }
