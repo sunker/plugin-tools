@@ -18,6 +18,7 @@
       "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
+        "\"devDependencies\":\\s*\\{[^}]*}",
         "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "npm"
