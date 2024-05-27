@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "includePaths": ["packages/create-plugin/templates/common/**"],
+  "includePaths": ["packages/create-plugin/templates/common/_package.json"],
   "regexManagers": [
     {
       "fileMatch": ["^_package.json$"],
