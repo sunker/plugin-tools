@@ -8,7 +8,8 @@
       "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
-        "\"@grafana/plugin-e2e\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"devDependencies\":\\s*\\{[^}]*}",
+        "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "@grafana/plugin-e2e",
       "depTypeTemplate": "devDependencies",
