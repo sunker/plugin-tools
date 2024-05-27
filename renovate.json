@@ -4,7 +4,7 @@
   "includePaths": ["packages/create-plugin/templates/common/_package.json"],
   "regexManagers": [
     {
-      "fileMatch": ["^_package.json$"],
+      "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "\"dependencies\":\\s*\\{[^}]*}",
