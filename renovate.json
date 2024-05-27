@@ -12,15 +12,5 @@
       ],
       "datasourceTemplate": "npm"
     }
-  ],
-  "packageRules": [
-    {
-      "packagePatterns": ["*"],
-      "enabled": false
-    }, 
-    {
-      "matchPackagePrefixes": ["@grafana/"],
-      "enabled": true
-    }
   ]
 }
