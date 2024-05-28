@@ -9,8 +9,9 @@
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "\"devDependencies\":\\s*\\{[^}]*}",
-        "\"@grafana/plugin-e2e\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(?<depName>.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
+      "packageNameTemplate": "@grafana/plugin-e2e",
       "datasourceTemplate": "npm"
     }
   ]
