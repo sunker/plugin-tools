@@ -18,11 +18,11 @@
   "author": "{{ sentenceCase orgName }}",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@babel/core": "^7.21.4",
+    "@babel/core": "^7.21.4",{{#unless usePlaywright}}
     "@grafana/e2e": "{{ grafanaVersion }}",
-    "@grafana/e2e-selectors": "{{ grafanaVersion }}",
-    "@grafana/eslint-config": "^7.0.0",
-    "@grafana/plugin-e2e": "^1.0.1",
+    "@grafana/e2e-selectors": "{{ grafanaVersion }}",{{/unless}}
+    "@grafana/eslint-config": "^7.0.0",{{#if usePlaywright}}
+    "@grafana/plugin-e2e": "^1.0.1",{{/if}}
     "@grafana/tsconfig": "^1.2.0-rc1",
     "@grafana/plugin-meta-extractor": "^0.0.2",{{#if usePlaywright}}
     "@playwright/test": "^1.41.2",{{/if}}
