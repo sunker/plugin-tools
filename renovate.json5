@@ -12,12 +12,13 @@
       ],
       "datasourceTemplate": "npm"
     },
-    // {
-    //   "customType": "regex",
-    //   "fileMatch": ["packages/create-plugin/templates/common/**/plugin.json"],
-    //   "matchStrings": [
-    //     "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
-    //   ],
-    //   "datasourceTemplate": "npm"    
+    {
+      "customType": "regex",
+      "fileMatch": ["plugin.json"],
+      "matchStrings": [
+        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+      ],
+      "datasourceTemplate": "npm"    
+    }
   ]
 }
