@@ -4,6 +4,14 @@
   "includePaths": ["packages/create-plugin/templates/common/_package.json"],
   "prHourlyLimit": 101,
   "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
+      "matchStrings": [
+        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+      ],
+      "datasourceTemplate": "npm"
+    }
     // {
     //   "customType": "regex",
     //   "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
@@ -13,23 +21,24 @@
     //   ],
     //   "datasourceTemplate": "npm"
     // },
-    {
-      "customType": "regex",
-      "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
-      "matchStrings": [
-        "\"dependencies\":\\s*\\{[^}]*}",
-        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""
-      ],
-      "datasourceTemplate": "npm"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
-      "matchStrings": [
-        "\"devDependencies\":\\s*\\{[^}]*}",
-        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
-      ],
-      "datasourceTemplate": "npm"
-    }
+    // {
+    //   "customType": "regex",
+    //   "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
+    //   "matchStrings": [
+    //     "\"dependencies\":\\s*\\{[^}]*}",
+    //     "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""
+    //   ],
+    //   "datasourceTemplate": "npm"
+    // },
+    // {
+    //   "customType": "regex",
+    //   "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
+    //   "matchStrings": [
+    //     "\"devDependencies\":\\s*\\{[^}]*}",
+    //     "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+    //   ],
+    //   "datasourceTemplate": "npm"
+    // }
+    
   ]
 }
