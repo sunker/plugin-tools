@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  // "includePaths": ["packages/create-plugin/templates/common/_package.json"],
+  "includePaths": ["packages/create-plugin/templates/common/"],
   "prHourlyLimit": 101,
   "customManagers": [
     {
@@ -12,41 +12,12 @@
       ],
       "datasourceTemplate": "npm"
     },
-    {
-      "customType": "regex",
-      "fileMatch": ["^plugin.json$"],
-      "matchStrings": [
-        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
-      ],
-      "datasourceTemplate": "npm"
-    },
     // {
     //   "customType": "regex",
-    //   "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
+    //   "fileMatch": ["packages/create-plugin/templates/common/**/plugin.json"],
     //   "matchStrings": [
-    //     "\"devDependencies\":\\s*\\{[^}]*}",
-    //     "\"(?<depName>@grafana\/plugin-e2e)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+    //     "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
     //   ],
-    //   "datasourceTemplate": "npm"
-    // },
-    // {
-    //   "customType": "regex",
-    //   "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
-    //   "matchStrings": [
-    //     "\"dependencies\":\\s*\\{[^}]*}",
-    //     "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""
-    //   ],
-    //   "datasourceTemplate": "npm"
-    // },
-    // {
-    //   "customType": "regex",
-    //   "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
-    //   "matchStrings": [
-    //     "\"devDependencies\":\\s*\\{[^}]*}",
-    //     "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
-    //   ],
-    //   "datasourceTemplate": "npm"
-    // }
-    
+    //   "datasourceTemplate": "npm"    
   ]
 }
