@@ -1,12 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "includePaths": ["packages/create-plugin/templates/common/"],
+  "includePaths": ["packages/create-plugin/templates/common/**"],
   "prHourlyLimit": 101,
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
+      "fileMatch": ["^_package.json$"],
       "matchStrings": [
         "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
