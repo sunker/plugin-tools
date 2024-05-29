@@ -14,7 +14,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["plugin.json"],
+      "fileMatch": ["packages/create-plugin/templates/datasource/src/plugin.json"],
       "matchStrings": [
         "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
