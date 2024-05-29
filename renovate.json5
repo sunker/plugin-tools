@@ -18,7 +18,7 @@
       "fileMatch": ["packages/create-plugin/templates/common/_package.json"],
       "matchStrings": [
         "\"dependencies\":\\s*\\{[^}]*}",
-        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "npm"
     },
