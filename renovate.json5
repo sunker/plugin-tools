@@ -6,7 +6,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^_package.json$"],
+      "fileMatch": ["_package.json"],
       "matchStrings": [
         "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
