@@ -16,8 +16,7 @@
       "customType": "regex",
       "fileMatch": ["^plugin.json$"],
       "matchStrings": [
-        "\"dependencies\":\\s*\\{[^}]*}",
-        "\"grafanaDependency\"[^\"]*:\\s*\">=(?<currentValue>.*)\""
+        "\"grafanaDependency\":\\s*\">=(?<currentValue>.*)\""
       ],
       "depNameTemplate": "grafana/grafana-enterprise",
       "datasourceTemplate": "docker"       
