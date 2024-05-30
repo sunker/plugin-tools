@@ -25,7 +25,7 @@
       "customType": "regex",
       "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"],
       "matchStrings": [
-        "\"grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}\""
+        "grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}"
       ],
       "depNameTemplate": "@grafana/data",
       "datasourceTemplate": "npm"    
