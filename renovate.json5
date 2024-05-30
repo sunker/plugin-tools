@@ -14,7 +14,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["plugin.json"],
+      "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"],
       "matchStrings": [
         "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
