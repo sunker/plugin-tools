@@ -38,10 +38,11 @@
       ],
       "matchUpdateTypes": [
         "minor",
-        "patch"
+        "patch",
+        "major"
       ],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "groupName": "update grafana dependencies",
+      "groupSlug": "all-grafana"
     }
   ]
 }
