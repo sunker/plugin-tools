@@ -16,7 +16,16 @@
       "customType": "regex",
       "fileMatch": ["plugin.json"],
       "matchStrings": [
-        "\"(grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+      ],
+      "depNameTemplate": "@grafana/data",
+      "datasourceTemplate": "npm"    
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["docker-compose.yaml"],
+      "matchStrings": [
+        "\"grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}\""
       ],
       "depNameTemplate": "@grafana/data",
       "datasourceTemplate": "npm"    
