@@ -23,7 +23,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["docker-compose.yaml"],
+      "fileMatch": ["packages/create-plugin/templates/common/docker-compose.yaml"],
       "matchStrings": [
         "\"grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}\""
       ],
