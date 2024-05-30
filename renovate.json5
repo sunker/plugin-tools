@@ -14,10 +14,11 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["packages/create-plugin/templates/datasource/src/plugin.json"],
+      "fileMatch": ["plugin.json"],
       "matchStrings": [
         "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
+      "depNameTemplate": "@grafana/data",
       "datasourceTemplate": "npm"    
     }
   ]
