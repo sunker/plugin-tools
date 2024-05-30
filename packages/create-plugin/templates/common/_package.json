@@ -22,7 +22,7 @@
     "@grafana/e2e": "{{ grafanaVersion }}",
     "@grafana/e2e-selectors": "{{ grafanaVersion }}",
     "@grafana/eslint-config": "^7.0.0",
-    "@grafana/plugin-e2e": "~1.0.1",
+    "@grafana/plugin-e2e": "^1.0.1",
     "@grafana/tsconfig": "^1.2.0-rc1",
     "@grafana/plugin-meta-extractor": "^0.0.2",
     "@playwright/test": "^1.41.2",
