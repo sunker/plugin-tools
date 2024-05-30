@@ -14,7 +14,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"],
+      "fileMatch": ["plugin.json"],
       "matchStrings": [
         "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
@@ -23,7 +23,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["packages/create-plugin/templates/common/docker-compose.yaml"],
+      "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"],
       "matchStrings": [
         "\"grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}\""
       ],
