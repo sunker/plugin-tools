@@ -16,7 +16,7 @@
       "customType": "regex",
       "fileMatch": ["plugin.json"],
       "matchStrings": [
-        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "@grafana/data",
       "datasourceTemplate": "npm"    
