@@ -27,8 +27,8 @@
       "matchStrings": [
         "grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}"
       ],
-      "depNameTemplate": "@grafana/data",
-      "datasourceTemplate": "npm"    
+      "depNameTemplate": "grafana/grafana-enterprise",
+      "datasourceTemplate": "docker"    
     }
   ]
 }
