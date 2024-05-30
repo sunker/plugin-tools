@@ -16,10 +16,10 @@
       "customType": "regex",
       "fileMatch": ["plugin.json"],
       "matchStrings": [
-        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\">=(?<currentValue>.*)\""
       ],
-      "depNameTemplate": "@grafana/data",
-      "datasourceTemplate": "npm"    
+      "depNameTemplate": "grafana/grafana-enterprise",
+      "datasourceTemplate": "docker"       
     },
     {
       "customType": "regex",
