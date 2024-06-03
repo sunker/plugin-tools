@@ -1,24 +1,50 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "includePaths": ["packages/create-plugin/templates/common/**"],
+  "includePaths": ["packages/create-plugin/templates/**"],
   "prHourlyLimit": 101,
+  "separateMajorMinor": false,
+  "enabledManagers": ["regex"],
   "customManagers": [
     {
       "customType": "regex",
       "fileMatch": ["_package.json"],
       "matchStrings": [
-        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "npm"
     },
     {
       "customType": "regex",
-      "fileMatch": ["packages/create-plugin/templates/datasource/src/plugin.json"],
+      "fileMatch": ["plugin.json"],
       "matchStrings": [
-        "\"(?<depName>grafanaDependency)\"[^\"]*:\\s*\"(?<currentValue>.*)\""
+        "\"grafanaDependency\":\\s*\"\\>=(?<currentValue>.*)\""
       ],
-      "datasourceTemplate": "npm"    
+      "depNameTemplate": "grafana/grafana-enterprise",
+      "datasourceTemplate": "docker"       
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"],
+      "matchStrings": [
+        "grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}"
+      ],
+      "depNameTemplate": "grafana/grafana-enterprise",
+      "datasourceTemplate": "docker"    
+    }
+  ],
+   "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "major"
+      ],
+      "groupName": "grafana dependencies",
+      "groupSlug": "all-grafana"
     }
   ]
 }
