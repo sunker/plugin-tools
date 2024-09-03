@@ -1,50 +1,45 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", ":disableDependencyDashboard"],
   "includePaths": ["packages/create-plugin/templates/**"],
-  "prHourlyLimit": 101,
   "separateMajorMinor": false,
-  "enabledManagers": ["regex"],
+  "labels": ["dependencies", "release", "patch"],
+  "enabledManagers": ["regex", "gomod"],
   "customManagers": [
     {
       "customType": "regex",
       "fileMatch": ["_package.json"],
-      "matchStrings": [
-        "\"(?<depName>@grafana\/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""
-      ],
+      "matchStrings": ["\"(?<depName>@grafana/.*)\"[^\"]*:\\s*\"\\^(?<currentValue>.*)\""],
       "datasourceTemplate": "npm"
     },
     {
       "customType": "regex",
-      "fileMatch": ["plugin.json"],
-      "matchStrings": [
-        "\"grafanaDependency\":\\s*\"\\>=(?<currentValue>.*)\""
-      ],
-      "depNameTemplate": "grafana/grafana-enterprise",
-      "datasourceTemplate": "docker"       
-    },
-    {
-      "customType": "regex",
       "fileMatch": ["(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"],
-      "matchStrings": [
-        "grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}"
-      ],
+      "matchStrings": ["grafana_version:\\s\\$\\{GRAFANA_VERSION:-(?<currentValue>.*)\\}"],
       "depNameTemplate": "grafana/grafana-enterprise",
-      "datasourceTemplate": "docker"    
+      "datasourceTemplate": "docker"
     }
   ],
-   "packageRules": [
+  "packageRules": [
     {
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "major"
-      ],
+      "matchManagers": ["regex"],
+      "automerge": true,
+      "matchCurrentVersion": "!/^0/",
+      "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
+      "matchUpdateTypes": ["patch"],
+
+    },
+    {
+      "matchManagers": ["regex"],
+      "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
+      "matchUpdateTypes": ["minor", "major"],
       "groupName": "grafana dependencies",
       "groupSlug": "all-grafana"
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchDepNames": ["grafana-plugin-sdk-go"],
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
