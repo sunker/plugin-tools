@@ -4,7 +4,7 @@
   "includePaths": ["packages/create-plugin/templates/**"],
   "separateMajorMinor": false,
   "labels": ["dependencies", "release", "patch"],
-  "enabledManagers": ["regex", "gomod"],
+  "enabledManagers": ["regex"],
   "customManagers": [
     {
       "customType": "regex",
@@ -22,24 +22,19 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["regex"],
       "automerge": true,
       "matchCurrentVersion": "!/^0/",
       "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
       "matchUpdateTypes": ["patch"],
+      "groupName": "grafana patch dependencies",
+      "groupSlug": "all-grafana-patch"
 
     },
     {
-      "matchManagers": ["regex"],
       "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
       "matchUpdateTypes": ["minor", "major"],
       "groupName": "grafana dependencies",
       "groupSlug": "all-grafana"
-    },
-    {
-      "matchManagers": ["gomod"],
-      "matchDepNames": ["grafana-plugin-sdk-go"],
-      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
