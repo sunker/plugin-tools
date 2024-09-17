@@ -25,9 +25,7 @@
       "automerge": true,
       "matchCurrentVersion": "!/^0/",
       "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
-      "matchUpdateTypes": ["patch", "minor"],
-      "groupName": "grafana patch dependencies",
-      "groupSlug": "all-grafana-patch"
+      "matchUpdateTypes": ["patch", "minor"]
 
     },
     {
