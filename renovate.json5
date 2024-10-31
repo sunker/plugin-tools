@@ -43,7 +43,7 @@
       "matchPackageNames": ["@grafana/e2e-selectors"],
       "followTag": "modified",
       "rangeStrategy": "bump",
-      "matchCategory": ["npm"],
+      "matchCategories": ["npm"],
     },
     {
       "groupName": "grafana dependencies",
