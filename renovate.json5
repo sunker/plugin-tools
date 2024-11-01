@@ -33,6 +33,7 @@
       "matchPackageNames": ["@grafana/e2e-selectors"],
       "followTag": "modified",
       "rangeStrategy": "bump",
+      "sourceDirectory": "packages/plugin-e2e"
     },
     {
       "automerge": true,
