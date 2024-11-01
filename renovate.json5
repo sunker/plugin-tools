@@ -8,6 +8,7 @@
   "postUpdateOptions": ["npmDedupe"],
   "labels": ["dependencies", "javascript"],
   "prConcurrentLimit": 50,
+  "ignoreDeps": ["@grafana/e2e-selectors"],
   // These custom managers are used to bump dependencies in create-plugin template files
   "customManagers": [
     {
