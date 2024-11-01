@@ -34,6 +34,7 @@
       "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
       "excludePackagePatterns": ["@grafana/e2e-selectors"],
       "matchUpdateTypes": ["patch"],
+      "matchCategories": ["custom"],
     },
     {
       "automerge": true,
@@ -51,7 +52,8 @@
       "labels": ["dependencies", "release", "patch"],
       "matchPackagePatterns": ["@grafana/*", "grafana/grafana-enterprise"],
       "excludePackagePatterns": ["@grafana/e2e-selectors", "@grafana/eslint-config"],
-      "matchUpdateTypes": ["minor", "major"]
+      "matchUpdateTypes": ["minor", "major"],
+      "matchCategories": ["custom"],
     },
     // Docusaurus dependencies have to be grouped together otherwise error out when building website.
     {
