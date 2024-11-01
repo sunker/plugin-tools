@@ -33,7 +33,6 @@
       "matchPackageNames": ["@grafana/e2e-selectors"],
       "followTag": "modified",
       "rangeStrategy": "bump",
-      "matchFileNames": ["**/package.json"],
     },
     {
       "automerge": true,
