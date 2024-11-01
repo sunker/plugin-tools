@@ -8,7 +8,6 @@
   "postUpdateOptions": ["npmDedupe"],
   "labels": ["dependencies", "javascript"],
   "prConcurrentLimit": 50,
-  "ignoreDeps": ["@grafana/e2e-selectors"],
   // These custom managers are used to bump dependencies in create-plugin template files
   "customManagers": [
     {
@@ -28,6 +27,16 @@
   "packageRules": [
     {
       "automerge": true,
+      "groupName": "e2e-selector dependencies",
+      "groupSlug": "plugin-e2e-selectors",
+      "labels": ["dependencies", "patch"],
+      "matchPackageNames": ["@grafana/e2e-selectors"],
+      "followTag": "modified",
+      "rangeStrategy": "bump",
+      "matchCategories": ["npm"],
+    },
+    {
+      "automerge": true,
       "groupName": "grafana patch dependencies",
       "groupSlug": "all-grafana-patch",
       "labels": ["dependencies", "patch"],
@@ -36,16 +45,6 @@
       "excludePackagePatterns": ["@grafana/e2e-selectors"],
       "matchUpdateTypes": ["patch"],
       "matchCategories": ["custom"],
-    },
-    {
-      "automerge": true,
-      "groupName": "e2e-selector dependencies",
-      "groupSlug": "plugin-e2e-selectors",
-      "labels": ["dependencies", "patch"],
-      "matchPackageNames": ["@grafana/e2e-selectors"],
-      "followTag": "modified",
-      "rangeStrategy": "bump",
-      "matchCategories": ["npm"],
     },
     {
       "groupName": "grafana dependencies",
